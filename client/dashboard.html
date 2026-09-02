@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard - SmartClaim AI</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🛡️ SmartClaim AI</div>
+    <div class="nav-links">
+      <span id="welcomeText"></span>
+      <button id="themeToggleBtn" class="theme-toggle">🌙 Dark Mode</button>
+      <a href="upload.html">Upload Claim</a>
+      <a href="status.html">Claim Status</a>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h2>My Dashboard</h2>
+      <a href="upload.html" class="btn btn-primary">+ Upload New Claim</a>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <h3 id="totalClaims">0</h3>
+        <p>Total Claims</p>
+      </div>
+      <div class="stat-card approved">
+        <h3 id="approvedClaims">0</h3>
+        <p>Approved Claims</p>
+      </div>
+      <div class="stat-card pending">
+        <h3 id="pendingClaims">0</h3>
+        <p>Pending Claims</p>
+      </div>
+      <div class="stat-card rejected">
+        <h3 id="rejectedClaims">0</h3>
+        <p>Rejected Claims</p>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Policy Number</th>
+            <th>Claim Amount</th>
+            <th>Fraud Score</th>
+            <th>Status</th>
+            <th>Submitted On</th>
+          </tr>
+        </thead>
+        <tbody id="claimsTableBody">
+          <!-- Rows injected by dashboard.js -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="spinner" class="spinner-overlay hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Upload Claim - SmartClaim AI</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🛡️ SmartClaim AI</div>
+    <div class="nav-links">
+      <button id="themeToggleBtn" class="theme-toggle">🌙 Dark Mode</button>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="status.html">Claim Status</a>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="center-page">
+    <div class="card auth-card" style="max-width: 480px;">
+      <h2 style="margin-bottom: 20px; color: var(--primary-dark);">Submit a New Claim</h2>
+
+      <form id="uploadForm">
+        <div class="form-group">
+          <label for="customerName">Customer Name</label>
+          <input type="text" id="customerName" required />
+        </div>
+
+        <div class="form-group">
+          <label for="policyNumber">Policy Number</label>
+          <input type="text" id="policyNumber" required />
+        </div>
+
+        <div class="form-group">
+          <label for="claimAmount">Claim Amount (₹)</label>
+          <input type="number" id="claimAmount" min="1" required />
+        </div>
+
+        <div class="form-group">
+          <label for="document">Upload Document (PDF/Image)</label>
+          <input type="file" id="document" accept=".pdf,.png,.jpg,.jpeg" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit Claim</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="spinner" class="spinner-overlay hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/upload.js"></script>
+</body>
+</html>

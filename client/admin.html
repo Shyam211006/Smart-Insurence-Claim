@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Dashboard - SmartClaim AI</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🛡️ SmartClaim AI <span style="color: var(--gray); font-weight: 400;">| Admin</span></div>
+    <div class="nav-links">
+      <span id="welcomeText"></span>
+      <button id="themeToggleBtn" class="theme-toggle">🌙 Dark Mode</button>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h2>All Claims</h2>
+      <button id="exportBtn" class="btn btn-outline btn-sm">⬇ Export CSV</button>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <h3 id="totalClaims">0</h3>
+        <p>Total Claims</p>
+      </div>
+      <div class="stat-card approved">
+        <h3 id="approvedClaims">0</h3>
+        <p>Approved</p>
+      </div>
+      <div class="stat-card pending">
+        <h3 id="pendingClaims">0</h3>
+        <p>Pending</p>
+      </div>
+      <div class="stat-card rejected">
+        <h3 id="rejectedClaims">0</h3>
+        <p>Rejected</p>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <input type="text" id="searchInput" placeholder="Search by customer, policy number, or claim ID..." />
+      <select id="statusFilter">
+        <option value="">All Status</option>
+        <option value="Pending">Pending</option>
+        <option value="Approved">Approved</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Policy Number</th>
+            <th>Amount</th>
+            <th>Fraud Score</th>
+            <th>Hash</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="claimsTableBody">
+          <!-- Rows injected by admin.js -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="spinner" class="spinner-overlay hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

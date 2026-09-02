@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Claim Status - SmartClaim AI</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🛡️ SmartClaim AI</div>
+    <div class="nav-links">
+      <button id="themeToggleBtn" class="theme-toggle">🌙 Dark Mode</button>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="upload.html">Upload Claim</a>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h2>My Claim Status</h2>
+    </div>
+
+    <div class="toolbar">
+      <input type="text" id="searchInput" placeholder="Search by policy number or claim ID..." />
+      <select id="statusFilter">
+        <option value="">All Status</option>
+        <option value="Pending">Pending</option>
+        <option value="Approved">Approved</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+    </div>
+
+    <div id="claimsContainer">
+      <!-- Claim cards injected by status.js -->
+    </div>
+  </div>
+
+  <div id="spinner" class="spinner-overlay hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/status.js"></script>
+</body>
+</html>
